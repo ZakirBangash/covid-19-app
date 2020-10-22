@@ -1,23 +1,27 @@
 import React from 'react'
 import './table.css'
 
-export const Table = () => {
+export const Table = ({ countries }) => {
+
+    
     return (
         <div className='table'>
+            
+            {
+            countries?.length > 0  && (
+            countries.map(country => (
             <tr>
                 <td>
-                    Pakistan
+                    {country.country}
                 </td>
-                <td>3423</td>
+            <td><strong>{country.cases}</strong></td>
             </tr>
-            <tr>
-                <td>
-                    Pakistan
-                </td>
-                <td>3423</td>
-            </tr>
-            
-            
+
+            ))
+            )}
+
+
+
         </div>
     )
 }

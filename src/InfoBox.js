@@ -7,7 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import './infobox.css';
 
-export const InfoBox = ({title}) => {
+export const InfoBox = ({title,cases,total}) => {
   return (
 
     <div className='infoBox'>
@@ -21,12 +21,12 @@ export const InfoBox = ({title}) => {
             {title}
           </Typography>
           
-          <h2>239300</h2>
+          <h2>{cases}</h2>
           <Typography
             color="textSecondary"
         
           >
-            34343 Total
+            {total} total
           </Typography>
         
         
