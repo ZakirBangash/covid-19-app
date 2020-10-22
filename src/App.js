@@ -9,7 +9,8 @@ import {InfoBox} from './InfoBox'
 import {Table} from './Table'
 import { Card,CardContent } from '@material-ui/core';
 import {sortedData} from './utilis';
-
+ import LineGraph from "./LineGraph";
+ import LineExample from "./LineGraph";
 
 function App() {
 const [countryCode, setCountryCode] = useState('worldwide');
@@ -118,7 +119,7 @@ const handleChange = async (e) => {
     <CardContent>
     <h3>Live Cases by Country</h3>
         <Table  countries={tableData}/>
-        <h1>This will contain graph </h1>
+        <LineExample /> 
     </CardContent>
     </Card>
     </div>

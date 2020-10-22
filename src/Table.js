@@ -3,34 +3,31 @@ import './table.css'
 
 export const Table = ({ countries }) => {
 
-useEffect(() => {
-  fetch("https://disease.sh/v3/covid-19/historical/all?lastdays=120")
-        .then(response => response.json())
-        .then(data => {
+// useEffect(() => {
+//   fetch("https://disease.sh/v3/covid-19/historical/all?lastdays=120")
+//         .then(response => response.json())
+//         .then(data => {
           
-            let lastDataPoint;
-            data.map(item => {
-                console.log(item);
-            })
+//             let lastDataPoint;
+        
 
+//             for (let date in data.cases) {
+//               if (lastDataPoint) {
+//                   console.log(data['cases'][date] , lastDataPoint);
+//                   console.log('below the subtraction');
+//                   console.log( data['cases'][date] - lastDataPoint);
 
-            for (let date in data.cases) {
-              if (lastDataPoint) {
-                  console.log(data['cases'][date] , lastDataPoint);
-                  console.log('below the subtraction');
-                  console.log( data['cases'][date] - lastDataPoint);
-
-                // let newDataPoint = {
-                //   x: date,
-                //   y: data[casesType][date] - lastDataPoint,
-                // };
+//                 // let newDataPoint = {
+//                 //   x: date,
+//                 //   y: data[casesType][date] - lastDataPoint,
+//                 // };
                
-              }
-              lastDataPoint = data['cases'][date];
-            }
-        })
+//               }
+//               lastDataPoint = data['cases'][date];
+//             }
+//         })
        
-      }, [])
+//       }, [])
 
 
     
