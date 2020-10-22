@@ -46,7 +46,11 @@ useEffect(() => {
 
     // setting the countries info for selection of country
     setCountries(countries);
-    // setting data for table
+    
+    /**
+     * setting data for a table
+     * calling sortedData function from utilis which will sort data
+     */
     const sort = sortedData(data); 
     setTableData(sort);
   }
@@ -114,6 +118,7 @@ const handleChange = async (e) => {
     <CardContent>
     <h3>Live Cases by Country</h3>
         <Table  countries={tableData}/>
+        <h1>This will contain graph </h1>
     </CardContent>
     </Card>
     </div>
