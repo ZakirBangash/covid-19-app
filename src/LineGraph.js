@@ -107,6 +107,13 @@ export default LineGraph;
 
 
 
+
+
+/**
+ * Alternative for Line graph is below
+ */
+
+
 // import React, { useState, useEffect } from 'react';
 // import { Line } from 'react-chartjs-2';
 // import numeral from "numeral";
@@ -118,15 +125,7 @@ export default LineGraph;
 //   let chartData = [];
 //   let lastDataPoint;
 //   for (let date in data) {
-//     //     if (lastDataPoint) {
-// //       let newDataPoint = {
-// //         x: date,
-// //         y: data[casesType][date] - lastDataPoint,
-// //       };
-// //       chartData.push(newDataPoint);
-// //     }
-// //     lastDataPoint = data[casesType][date];
-// //   }
+
 
 //     if(lastDataPoint){
 //        let newdata = data[date] - lastDataPoint;
