@@ -3,7 +3,7 @@ import {Map as LeafletMap,TileLayer} from 'react-leaflet';
 import './Map.css'
 import {showDataOnMap} from './utilis'
 
-export const Map = ({countries,center,zoom}) => {
+export const Map = ({countries,casesType,center,zoom}) => {
     return (
 
         <div className="map">
@@ -13,7 +13,7 @@ export const Map = ({countries,center,zoom}) => {
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 >
                 </TileLayer>
-            {showDataOnMap(countries)}
+            {showDataOnMap(countries,casesType)}
             </LeafletMap>
         </div>
 

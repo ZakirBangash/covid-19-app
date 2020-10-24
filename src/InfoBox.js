@@ -7,10 +7,18 @@ import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import './infobox.css';
 
-export const InfoBox = ({title,cases,total}) => {
+export const InfoBox = ({title,cases,isRed,active,total,...props}) => {
+  console.log(active)
   return (
 
-    <div className='infoBox'>
+    <div 
+      onClick={props.onClick}
+      className={`infoBox ${active && 'infoBox--selected'}
+      ${
+        isRed && "infoBox--red"}
+      `}
+    
+      >
     
       <Paper elevation={3}>
         <CardContent>
@@ -21,10 +29,10 @@ export const InfoBox = ({title,cases,total}) => {
             {title}
           </Typography>
           
-          <h2>{cases}</h2>
+          <h2 className="infoBox__cases">{cases}</h2>
           <Typography
             color="textSecondary"
-        
+            className="infoBox__total"
           >
             {total} total
           </Typography>

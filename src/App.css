@@ -24,8 +24,27 @@ body {
      justify-content: space-between; 
   }
 
+  .app__header h1 {
+      color: red;
+  }
   .app__stats {
      display: flex;
      justify-content: space-between;
   }
 
+  .MuiFormControl-root {
+      background-color: white !important;
+  }
+
+.chartjs-render-monitor {
+    height: 250px !important;
+}
+
+
+.lineGraph {
+    margin-top: 34px;
+}
+
+.app__graph {
+    height: 400px !important;
+}
