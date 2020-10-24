@@ -11,12 +11,17 @@ import { Card,CardContent } from '@material-ui/core';
 import {sortedData} from './utilis';
  import LineGraph from "./LineGraph";
  import LineExample from "./LineGraph";
+ import {Map} from './Map'
+ import "leaflet/dist/leaflet.css"
 
 function App() {
 const [countryCode, setCountryCode] = useState('worldwide');
 const [countries, setCountries] = useState([]);
 const [countriesInfo, setCountriesInfo] = useState({});
 const [tableData, setTableData] = useState({});
+const [zoom, setZoom] = useState(3);
+const [center, setCenter] = useState({lat:34.80746,lng:-40.4796});
+const [Circlecountries, setCircleCountries] = useState([]);
 
 
 // useEffect to fetch the Global data when app is initiated
@@ -44,6 +49,8 @@ useEffect(() => {
         value:country.countryInfo.iso3
       }
     ));
+    
+    setCircleCountries(data);
 
     // setting the countries info for selection of country
     setCountries(countries);
@@ -70,6 +77,10 @@ const handleChange = async (e) => {
   const url = onCountryCode === 'worldwide' ? `https://disease.sh/v3/covid-19/all`:`https://disease.sh/v3/covid-19/countries/${onCountryCode}`;
   const res = await fetch(url);
   const data = await res.json();
+  setCenter([data.countryInfo.lat,data.countryInfo.long]);
+  setZoom(4);
+  console.log(data);
+
   setCountryCode(onCountryCode);  
   setCountriesInfo(data);
 
@@ -112,6 +123,8 @@ const handleChange = async (e) => {
           total={countriesInfo.deaths}
         />
         </div>
+
+        <Map countries={Circlecountries} center={center} zoom={zoom} />
 
     </div>
     
